@@ -1,0 +1,42 @@
+def configureRepo(RepositoryHandler handler) {
+    handler.maven {
+        url 'http://maven.17gwx.com/repository/maven-releases/'
+    }
+    //react native
+    handler.maven {
+        url "$rootDir/rn/node_modules/react-native/android"
+    }
+    handler.maven {
+        url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+    }
+    handler.maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public'
+    }
+    handler.mavenLocal()
+    handler.mavenCentral()
+    handler.google()
+    handler.jcenter()
+    handler.maven {
+        url "https://dl.bintray.com/thelasterstar/maven/"
+    }
+    handler.maven {
+        url "https://jitpack.io"
+    }
+    handler.maven {//百川
+        url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
+    }
+    handler.maven {
+        url 'https://dl.bintray.com/umsdk/release'
+    }
+    handler.maven {
+        url 'http://developer.huawei.com/repo/'
+    }
+    handler.maven {
+        url 'https://dl.bintray.com/qichuan/maven/'
+    }
+    handler.flatDir {
+        dirs 'libs'
+    }
+}
+
+ext.configureRepo = this.&configureRepo
